@@ -28,4 +28,5 @@ Validation::run([
 
 $file_upload = do_upload($_FILES['file_path'], 'uploads');
 
+$_POST['workplans']['author_id'] = auth()->user->id;
 $_POST['workplans']['file_path'] = $file_upload;
