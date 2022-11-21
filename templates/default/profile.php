@@ -21,7 +21,7 @@
                             <?php if($success_msg): ?>
                             <div class="alert alert-success"><?=$success_msg?></div>
                             <?php endif ?>
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="">Nama</label>
                                     <input type="text" name="users[name]" class="form-control" value="<?=$data->name?>" required>
@@ -45,6 +45,10 @@
                                 <div class="form-group">
                                     <label for="">Kata Sandi</label>
                                     <input type="password" name="users[password]" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Pic</label>
+                                    <input type="text" name="pic" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary">Submit</button>
