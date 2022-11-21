@@ -27,7 +27,10 @@
                                         <tr>
                                             <th width="20px">#</th>
                                             <th>Nama</th>
+                                            <th>Angkatan</th>
+                                            <th>NRA</th>
                                             <th>Username</th>
+                                            <th>Foto</th>
                                             <th class="text-right">
                                             </th>
                                         </tr>
@@ -39,7 +42,14 @@
                                                 <?=$index+1?>
                                             </td>
                                             <td><?=$data->name?></td>
+                                            <td><?=$data->generation?></td>
+                                            <td><?=$data->NRA?></td>
                                             <td><?=$data->username?></td>
+                                            <td>
+                                                <?php if($data->pic): ?>
+                                                <a href="<?=asset($data->pic)?>" target="_blank">Lihat</a>
+                                                <?php endif ?>
+                                            </td>
                                             <td>
                                                 <a href="<?=routeTo('users/view',['id'=>$data->id])?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i> Lihat</a>
                                                 <a href="<?=routeTo('users/edit',['id'=>$data->id])?>" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>

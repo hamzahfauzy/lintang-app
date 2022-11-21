@@ -18,7 +18,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="">Nama</label>
                                     <input type="text" name="users[name]" class="form-control" required>
@@ -42,6 +42,10 @@
                                 <div class="form-group">
                                     <label for="">Kata Sandi</label>
                                     <input type="password" name="users[password]" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Pic</label>
+                                    <input type="file" name="pic" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary">Submit</button>
