@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Pic</label>
-                                    <input type="text" name="pic" class="form-control">
+                                    <input type="file" name="pic" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary">Submit</button>
