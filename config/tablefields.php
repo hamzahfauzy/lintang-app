@@ -45,7 +45,7 @@ return [
     ],
     
     'workplan_responses' => [
-        'wokrplan_id',
+        'workplan_id',
         'response_type',
         'user_id',
         'content',
@@ -57,7 +57,7 @@ return [
             'label' => 'Judul',
             'type'  => 'text'
         ],
-        'wokrplan_id' => [
+        'workplan_id' => [
             'label' => 'Program Kerja',
             'type'  => 'options-obj:workplans,id,title'
         ],
@@ -68,7 +68,7 @@ return [
     ],
     
     'workplan_report_responses' => [
-        'wokrplan_report_id',
+        'workplan_report_id',
         'response_type',
         'user_id',
         'content',
@@ -94,8 +94,14 @@ return [
     ],
     
     'polling_items' => [
-        'polling_id',
-        'name',
+        'polling_id' => [
+            'label' => 'Polling',
+            'type'  => 'options-obj:pollings,id,title'
+        ],
+        'name' => [
+            'label' => 'nama',
+            'type'  => 'text'
+        ],
 
     ],
     
@@ -125,8 +131,14 @@ return [
     ],
     
     'vote_items' => [
-        'vote_id',
-        'name',
+        'vote_id' => [
+            'label' => 'vote',
+            'type'  => 'options-obj:votes,id,title'
+        ],
+        'name' => [
+            'label' => 'nama',
+            'type'  => 'text'
+        ],
 
     ],
     
@@ -168,7 +180,7 @@ return [
         ],
         'sector' => [
             'label' => 'Sektor',
-            'type'  => 'text'
+            'type'  => 'options-obj:business_sectors,id,name'
         ],
         'owner' => [
             'label' => 'Pemilik',
@@ -192,11 +204,11 @@ return [
         ],
         'sector' => [
             'label' => 'Bidang',
-            'type'  => 'text'
+            'type'  => 'options-obj:community_sectors,id,name'
         ],
         'coverage' => [
             'label' => 'Coverage',
-            'type'  => 'tel'
+            'type'  => 'text'
         ],
         'phone' => [
             'label' => 'No HP',
@@ -227,4 +239,15 @@ return [
         // 'created_at',
 
     ],
+
+    'statistics' => [
+        'name' => [
+            'label' => 'Nama',
+            'type'  => 'text'
+        ],
+        'counter' => [
+            'label' => 'Counter',
+            'type'  => 'tel'
+        ],
+    ]
 ];

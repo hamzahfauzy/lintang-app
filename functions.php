@@ -17,6 +17,7 @@ require $parent_path . 'libs/Session.php';
 require $parent_path . 'libs/Database.php';
 require $parent_path . 'libs/Page.php';
 require $parent_path . 'libs/Validation.php';
+require $parent_path . 'libs/Wa.php';
 
 $config = require $parent_path . 'config/main.php';
 
@@ -445,9 +446,6 @@ function simple_curl($uri, $method='GET', $data=null, $curl_headers=array(), $cu
 	if(!in_array($method, $allowed_methods))
 		throw new \Exception("'$method' is not valid cURL HTTP method.");
 
-	if(!empty($data) && !is_string($data))
-		throw new \Exception("Invalid data for cURL request '$method $uri'");
-
 	// init
 	$curl = curl_init($uri);
 
@@ -459,14 +457,10 @@ function simple_curl($uri, $method='GET', $data=null, $curl_headers=array(), $cu
 		case 'GET':
 			break;
 		case 'POST':
-			if(!is_string($data))
-				throw new \Exception("Invalid data for cURL request '$method $uri'");
 			curl_setopt($curl, CURLOPT_POST, true);
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 			break;
 		case 'PUT':
-			if(!is_string($data))
-				throw new \Exception("Invalid data for cURL request '$method $uri'");
 			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
 			curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 			break;
@@ -501,11 +495,14 @@ function simple_curl($uri, $method='GET', $data=null, $curl_headers=array(), $cu
 	}
 	$error = curl_error($curl);
 
+    $http_status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
 	curl_close($curl);
 
 	// return
 	return array(
 		'raw' => $raw,
+		'status' => $http_status,
 		'headers' => $headers,
 		'content' => $content,
 		'error' => $error
@@ -571,6 +568,11 @@ function get_route_path($path, $params)
 
 function do_upload($file, $folder, $field = false, $multiple = false)
 {
+    if(!is_dir($folder))
+    {
+        mkdir($folder);
+    }
+    
     $filename = $file['name'];
     $tmp      = $file['tmp_name'];
     if($field)
@@ -604,4 +606,32 @@ function do_upload($file, $folder, $field = false, $multiple = false)
 
     return false;
 
+}
+
+function get_params($url)
+{
+    $parts = parse_url($url);
+    parse_str($parts['query'], $query);
+    return $query;
+}
+
+function tgl_indo($raw, $time = false){
+    $tanggal = date('Y-m-d', strtotime($raw));
+	$bulan = array (
+		1 =>   'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	);
+	$pecahkan = explode('-', $tanggal);
+ 
+	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0].($time ? ' '.date('H:i', strtotime($raw)) : '');
 }

@@ -8,8 +8,16 @@
                         <h5 class="text-white op-7 mb-2">Memanajemen data <?=_ucwords(__($table))?></h5>
                     </div>
                     <div class="ml-md-auto py-2 py-md-0">
-                        <?php if(is_allowed(get_route_path('crud/create',['table'=>$table]),auth()->user->id)): ?>
-                            <a href="<?=routeTo('crud/create',['table'=>$table])?>" class="btn btn-secondary btn-round">Buat <?=_ucwords(__($table))?></a>
+                        <?php 
+                        if(is_allowed(get_route_path('crud/create',['table'=>$table]),auth()->user->id)): 
+                            $params = ['table'=>$table];
+                            if(in_array($table,['polling_items','vote_items']))
+                            {
+                                $key = ['polling_items' => 'polling_id','vote_items'=>'vote_id'];
+                                $params[$key[$table]] = $_GET[$key[$table]];
+                            }
+                        ?>
+                            <a href="<?=routeTo('crud/create',$params)?>" class="btn btn-secondary btn-round">Buat <?=_ucwords(__($table))?></a>
                         <?php endif ?>
                     </div>
                 </div>

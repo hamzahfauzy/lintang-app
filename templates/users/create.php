@@ -24,6 +24,18 @@
                                     <input type="text" name="users[name]" class="form-control" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="">Angkatan</label>
+                                    <input type="text" name="users[generation]" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">NRA</label>
+                                    <input type="text" name="users[NRA]" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone</label>
+                                    <input type="text" name="users[phone]" class="form-control" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="">Username</label>
                                     <input type="text" name="users[username]" class="form-control" required>
                                 </div>

@@ -62,7 +62,7 @@ CREATE TABLE workplans (
 
 CREATE TABLE workplan_responses (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    wokrplan_id INT NOT NULL,
+    workplan_id INT NOT NULL,
     response_type VARCHAR(100) NOT NULL, /* comment, feedbacks */
     user_id INT NOT NULL,
     content LONGTEXT NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE workplan_responses (
 
 CREATE TABLE workplan_reports (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    wokrplan_id INT NOT NULL,
+    workplan_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
     file_path VARCHAR(100) NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -79,7 +79,7 @@ CREATE TABLE workplan_reports (
 
 CREATE TABLE workplan_report_responses (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    wokrplan_report_id INT NOT NULL,
+    workplan_report_id INT NOT NULL,
     response_type VARCHAR(100) NOT NULL, /* comment, feedbacks */
     user_id INT NOT NULL,
     content VARCHAR(100),

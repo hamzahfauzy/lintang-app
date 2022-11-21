@@ -8,7 +8,15 @@
                         <h5 class="text-white op-7 mb-2">Memanajemen data <?=_ucwords(__($table))?></h5>
                     </div>
                     <div class="ml-md-auto py-2 py-md-0">
-                    <a href="<?=routeTo('crud/index',['table'=>$table])?>" class="btn btn-warning btn-round">Kembali</a>
+                        <?php
+                        $params = ['table'=>$table];
+                        if(in_array($table,['polling_items','vote_items']))
+                        {
+                            $key = ['polling_items' => 'polling_id','vote_items'=>'vote_id'];
+                            $params[$key[$table]] = $_GET[$key[$table]];
+                        }
+                        ?>
+                        <a href="<?=routeTo('crud/index',$params)?>" class="btn btn-warning btn-round">Kembali</a>
                     </div>
                 </div>
             </div>

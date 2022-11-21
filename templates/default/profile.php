@@ -27,6 +27,18 @@
                                     <input type="text" name="users[name]" class="form-control" value="<?=$data->name?>" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="">Angkatan</label>
+                                    <input type="text" name="users[generation]" class="form-control" value="<?=$data->generation?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">NRA</label>
+                                    <input type="text" name="users[NRA]" class="form-control" value="<?=$data->NRA?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone</label>
+                                    <input type="text" name="users[phone]" class="form-control" value="<?=$data->phone?>" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="">Username</label>
                                     <input type="text" name="users[username]" class="form-control" value="<?=$data->username?>" required>
                                 </div>
