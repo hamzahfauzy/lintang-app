@@ -4,13 +4,13 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            Z-Techno
+							Sistem Informasi Rholaz (SIR)
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="copyright ml-auto">
-                Copyright &copy; 2021, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Z-Techno</a>
+                Copyright &copy; 2021, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">SIR</a>
             </div>				
         </div>
     </footer>
