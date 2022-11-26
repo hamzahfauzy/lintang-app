@@ -14,7 +14,7 @@ return [
         'Vote' => 'crud/index?table=votes',
         'Aspirasi' => 'crud/index?table=aspirations',
     ],
-    'Organisasi Support' => [
+    'Optimasi' => [
         'Events' => 'events/index',
         'Bisnis / Usaha Teman' => 'crud/index?table=business',
         'Komunitas' => 'crud/index?table=communities',
