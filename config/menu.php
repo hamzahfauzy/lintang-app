@@ -14,6 +14,11 @@ return [
         'Vote' => 'crud/index?table=votes',
         'Aspirasi' => 'crud/index?table=aspirations',
     ],
+    'Social Reference' => [
+        'Alumni Meninggal' => 'crud/index?table=alumni_deads',
+        'Penerima Santunan' => 'crud/index?table=alumni_beneficiaries',
+        'Beasiswa' => 'crud/index?table=scholarship_receivers',
+    ],
     'Optimasi' => [
         'Events' => 'events/index',
         'Bisnis / Usaha Teman' => 'crud/index?table=business',

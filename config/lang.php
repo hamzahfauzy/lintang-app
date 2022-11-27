@@ -24,4 +24,7 @@ return [
     'description' => 'Deskripsi',
     'file_path' => 'File',
     'budget' => 'Anggaran',
+    'alumni_deads' => 'Alumni Meninggal',
+    'alumni_beneficiaries' => 'Penerima Santunan',
+    'scholarship_receivers' => 'Beasiswa',
 ];

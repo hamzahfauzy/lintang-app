@@ -249,5 +249,104 @@ return [
             'label' => 'Counter',
             'type'  => 'tel'
         ],
-    ]
+    ],
+
+    'alumni_deads' => [
+        'name' => [
+            'label' => 'Nama Alumni',
+            'type'  => 'text'
+        ],
+        'generation' => [
+            'label' => 'Angkatan',
+            'type'  => 'number'
+        ],
+        'date' => [
+            'label' => 'Tanggal Meninggal',
+            'type'  => 'date'
+        ],
+        'address' => [
+            'label' => 'Alamat rumah duka',
+            'type'  => 'text'
+        ],
+        'reason' => [
+            'label' => 'Penyebab Meninggal',
+            'type'  => 'options:Sakit|Kecelakaan|Tidak disebutkan'
+        ],
+        'burial_location' => [
+            'label' => 'Tempat di makamkan',
+            'type'  => 'text'
+        ],
+        'colleague_phone' => [
+            'label' => 'No Telp/WA Keluarga/Teman Dekat',
+            'type'  => 'number'
+        ],
+        // 'status',
+        // 'notes',
+    ],
+    
+    'alumni_beneficiaries' => [
+        'name' => [
+            'label' => 'Nama Alumni',
+            'type'  => 'text'
+        ],
+        'generation' => [
+            'label' => 'Angkatan',
+            'type'  => 'number'
+        ],
+        'receiver_name' => [
+            'label' => 'Nama Penerima',
+            'type'  => 'text'
+        ],
+        'receiver_status' => [
+            'label' => 'Status Penerima',
+            'type'  => 'options:Keluarga inti|Yang bersangkutan'
+        ],
+        'beneficiary_factor' => [
+            'label' => 'Faktor Santunan',
+            'type'  => 'options:Korban bencana alam|Kecelakaan|Yatim piatu|Ekonomi'
+        ],
+        'address' => [
+            'label' => 'Alamat Alumni',
+            'type'  => 'text'
+        ],
+        'colleague_phone' => [
+            'label' => 'No Telp/WA Keluarga/Teman Dekat',
+            'type'  => 'number'
+        ],
+        // 'status',
+        // 'notes',
+    ],
+    
+    'scholarship_receivers' => [
+        'name' => [
+            'label' => 'Nama Alumni',
+            'type'  => 'text'
+        ],
+        'generation' => [
+            'label' => 'Angkatan',
+            'type'  => 'number'
+        ],
+        'receiver_name' => [
+            'label' => 'Nama Penerima',
+            'type'  => 'text'
+        ],
+        'receiver_status' => [
+            'label' => 'Status Penerima',
+            'type'  => 'options:Anak Alumni|Yang bersangkutan'
+        ],
+        'scholarship_factor' => [
+            'label' => 'Faktor Beasisa',
+            'type'  => 'options:Prestasi|Ekonomi'
+        ],
+        'address' => [
+            'label' => 'Alamat Alumni',
+            'type'  => 'text'
+        ],
+        'colleague_phone' => [
+            'label' => 'No Telp/WA Keluarga/Teman Dekat',
+            'type'  => 'number'
+        ],
+        // 'status',
+        // 'notes',
+    ],
 ];

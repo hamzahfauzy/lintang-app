@@ -1,6 +1,6 @@
 <?php
 
-if(get_role(auth()->user->id))
+if(get_role(auth()->user->id)->name == 'administrator')
 {
     if($d->status == 'di ajukan')
     {
