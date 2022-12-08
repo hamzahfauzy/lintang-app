@@ -89,6 +89,10 @@ return [
             'label' => 'Status',
             'type'  => 'options:Aktif|Tidak Aktif'
         ],
+        'types'=> [
+            'label' => 'Jenis',
+            'type'  => 'options:Angkatan|User|NRA'
+        ],
         // 'created_at',
 
     ],
@@ -125,6 +129,10 @@ return [
         'status'=> [
             'label' => 'Status',
             'type'  => 'options:Aktif|Tidak Aktif'
+        ],
+        'types'=> [
+            'label' => 'Jenis',
+            'type'  => 'options:Angkatan|User|NRA'
         ],
         // 'created_at',
 
@@ -335,8 +343,12 @@ return [
             'type'  => 'options:Anak Alumni|Yang bersangkutan'
         ],
         'scholarship_factor' => [
-            'label' => 'Faktor Beasisa',
+            'label' => 'Alasan Pengajuan',
             'type'  => 'options:Prestasi|Ekonomi'
+        ],
+        'scholarship_factor' => [
+            'label' => 'Pendidikan',
+            'type'  => 'options:TK|SD|SMP|SMA/SMK|PT'
         ],
         'address' => [
             'label' => 'Alamat Alumni',

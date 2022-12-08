@@ -44,10 +44,16 @@
                                     }
                                     $label = _ucwords($label);
                                     $fieldname = $type == 'file' ? $field : $table."[".$field."]";
+                                    $attr = ['class'=>"form-control","placeholder"=>$label,"value"=>$old[$field]??''];
+                                    if($table=='scholarship_receivers'&&$field == 'generation')
+                                    {
+                                        $attr['readonly'] = 'readonly';
+                                        $attr['value'] = auth()->user->generation;
+                                    }
                                 ?>
                                 <div class="form-group">
                                     <label for=""><?=$label?></label>
-                                    <?= Form::input($type, $fieldname, ['class'=>"form-control","placeholder"=>$label,"value"=>$old[$field]??'']) ?>
+                                    <?= Form::input($type, $fieldname, $attr) ?>
                                 </div>
                                 <?php endforeach ?>
                                 <div class="form-group">

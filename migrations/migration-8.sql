@@ -1,0 +1,1 @@
+ALTER TABLE scholarship_receivers ADD COLUMN study VARCHAR(20) DEFAULT NULL;

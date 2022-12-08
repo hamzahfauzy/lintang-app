@@ -1,0 +1,2 @@
+ALTER TABLE votes ADD COLUMN types VARCHAR(20) DEFAULT "Angkatan";
+ALTER TABLE pollings ADD COLUMN types VARCHAR(20) DEFAULT "Angkatan";
