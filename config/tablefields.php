@@ -346,7 +346,7 @@ return [
             'label' => 'Alasan Pengajuan',
             'type'  => 'options:Prestasi|Ekonomi'
         ],
-        'scholarship_factor' => [
+        'study' => [
             'label' => 'Pendidikan',
             'type'  => 'options:TK|SD|SMP|SMA/SMK|PT'
         ],
