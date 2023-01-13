@@ -1,6 +1,7 @@
 <?php
 
 $id   = $_GET['id'];
+$user = auth()->user;
 
 Validation::run([
     'id' => [
@@ -12,8 +13,19 @@ Validation::run([
 
 $conn = conn();
 $db   = new Database($conn);
+$data = $db->single('pollings',['id'=>$id]);
 
-$isDoPolling = $db->exists('polling_counters',['polling_id'=>$id,'user_id'=>auth()->user->id]);
+$isDoPolling = $db->exists('polling_counters',['polling_id'=>$id,'user_id'=>$user->id]);
+
+if($data->types == 'Angkatan')
+{
+    $isDoPolling = $db->exists('polling_counters',['polling_id'=>$id,'user_id'=>$user->id,'user_info'=>$user->generation]);
+}
+
+if($data->types == 'NRA')
+{
+    $isDoPolling = $db->exists('polling_counters',['polling_id'=>$id,'user_id'=>$user->id,'user_info'=>$user->NRA]);
+}
 
 if(request() == 'POST' && !$isDoPolling)
 {
@@ -28,7 +40,6 @@ if(request() == 'POST' && !$isDoPolling)
     die();
 }
 
-$data   = $db->single('pollings',['id'=>$id]);
 $items = $db->all('polling_items',['polling_id'=>$data->id]);
 
 $items = array_map(function($item) use ($db) {

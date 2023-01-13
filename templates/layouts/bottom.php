@@ -10,7 +10,7 @@
                 </ul>
             </nav>
             <div class="copyright ml-auto">
-                Copyright &copy; 2021, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">SIR</a>
+                Copyright &copy; <?=date('Y')?>, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">SIR</a>
             </div>				
         </div>
     </footer>
@@ -59,6 +59,19 @@
 	<script src="<?=asset('assets/js/setting-demo.js')?>"></script>
 	<script src="<?=asset('assets/js/demo.js')?>"></script>
 	<script src="<?=asset('assets/js/plugin/datatables-pagingtype/full_numbers_no_ellipses.js')?>"></script>
+	<script>
+	function pendingNote(el)
+	{
+		// alert(el.href)
+		var catatan = prompt('Berikan catatan')
+		if(catatan)
+		{
+			location=el.href + '&catatan=' + catatan
+		}
+
+		return false
+	}
+	</script>
 	<script>
 		$('.datatable-crud').dataTable({
 			stateSave:true,

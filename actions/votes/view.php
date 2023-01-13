@@ -1,6 +1,7 @@
 <?php
 
 $id   = $_GET['id'];
+$user = auth()->user;
 
 Validation::run([
     'id' => [
@@ -12,8 +13,19 @@ Validation::run([
 
 $conn = conn();
 $db   = new Database($conn);
+$data = $db->single('votes',['id'=>$id]);
 
-$isDoVoting = $db->exists('vote_counters',['vote_id'=>$id,'user_id'=>auth()->user->id]);
+$isDoVoting = $db->exists('vote_counters',['vote_id'=>$id,'user_id'=>$user->id]);
+
+if($data->types == 'Angkatan')
+{
+    $isDoVoting = $db->exists('vote_counters',['vote_id'=>$id,'user_id'=>$user->id,'user_info'=>$user->generation]);
+}
+
+if($data->types == 'NRA')
+{
+    $isDoVoting = $db->exists('vote_counters',['vote_id'=>$id,'user_id'=>$user->id,'user_info'=>$user->NRA]);
+}
 
 if(request() == 'POST' && !$isDoVoting)
 {
@@ -28,7 +40,6 @@ if(request() == 'POST' && !$isDoVoting)
     die();
 }
 
-$data   = $db->single('votes',['id'=>$id]);
 $items = $db->all('vote_items',['vote_id'=>$data->id]);
 
 $items = array_map(function($item) use ($db) {

@@ -1,5 +1,7 @@
 <?php
 
+$fields['colleague_phone']['type']  = 'text';
+
 $fields['status'] = [
     'label' => 'Status',
     'type'  => 'text'

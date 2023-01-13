@@ -5,10 +5,17 @@ $db   = new Database($conn);
 $user = auth()->user;
 $table = 'alumni_beneficiaries';
 
-$db->update($table,[
+$params = [
     'status' => $_GET['status'],
     'admin_id' => $user->id
-],[
+];
+
+if(isset($_GET['catatan']))
+{
+    $params['notes'] = $_GET['catatan'];
+}
+
+$db->update($table,$params,[
     'id' => $_GET['id']
 ]);
 

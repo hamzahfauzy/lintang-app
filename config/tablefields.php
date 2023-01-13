@@ -81,6 +81,10 @@ return [
             'label' => 'Judul',
             'type'  => 'text'
         ],
+        'slug' => [
+            'label' => 'Slug',
+            'type'  => 'text'
+        ],
         'description' => [
             'label' => 'Deskripsi',
             'type'  => 'textarea'
@@ -120,6 +124,10 @@ return [
     'votes' => [
         'title' => [
             'label' => 'Judul',
+            'type'  => 'text'
+        ],
+        'slug' => [
+            'label' => 'Slug',
             'type'  => 'text'
         ],
         'description'=> [
